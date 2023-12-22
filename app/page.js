@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Picture1 from '../images/picture1.png';
 import Picture2 from '../images/picture2.jpg';
-import Navbar from '@/components/Navbar';
+import Navbar from '../components/Navbar';
 
 export default function Home() {
   return (
