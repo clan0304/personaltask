@@ -24,7 +24,7 @@ const Menu = () => {
     <div>
       <div className="flex absolute top-2 right-2 justify-end z-40">
         <button
-          className="hover:scale-125 transition-transform duration-300"
+          className="hover:scale-125 transition-transform duration-500"
           onClick={() => setIsMobileToggle(!isMobileToggle)}
         >
           {isMobileToggle ? <IoMdClose size={25} /> : <IoMenu size={25} />}
