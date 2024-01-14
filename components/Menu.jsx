@@ -5,7 +5,7 @@ import { IoMdClose } from 'react-icons/io';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const Menu = () => {
+const Menu = ({ speak }) => {
   const [isMobileToggle, setIsMobileToggle] = useState(false);
 
   useEffect(() => {
@@ -22,12 +22,13 @@ const Menu = () => {
 
   return (
     <div>
-      <div className="flex absolute top-2 right-2 justify-end z-40">
+      <div className="flex absolute top-10 right-2 justify-end z-40">
         <button
           className="hover:scale-125 transition-transform duration-500"
           onClick={() => setIsMobileToggle(!isMobileToggle)}
+          onFocus={() => (isMobileToggle ? speak('Close') : speak('Menu'))}
         >
-          {isMobileToggle ? <IoMdClose size={25} /> : <IoMenu size={25} />}
+          {isMobileToggle ? <IoMdClose size={30} /> : <IoMenu size={30} />}
         </button>
       </div>
 
