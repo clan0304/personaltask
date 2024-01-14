@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Menu from './Menu';
 import Logo from '../images/Logo.png';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Navbar = () => {
   const [isUsingKeyboard, setIsUsingKeyboard] = useState(false);
@@ -14,14 +14,20 @@ const Navbar = () => {
       window.speechSynthesis.speak(msg);
     }
   };
+  useEffect(() => {
+    const handleKeydown = (e) => {
+      if (e.key === 'Tab') {
+        setIsUsingKeyboard(true);
+      }
+    };
 
-  const handleKeydown = (e) => {
-    if (e.key === 'Tab') {
-      setIsUsingKeyboard(true);
-    }
-  };
+    document.addEventListener('keydown', handleKeydown);
 
-  document.addEventListener('keydown', handleKeydown);
+    return () => {
+      document.removeEventListener('keydown', handleKeydown);
+    };
+  }, []);
+
   return (
     <nav className="flex justify-between mr-2 sm:mr-10 lg:mr-16 mt-10">
       <div className="flex md:justify-start ml-7 hover:scale-125 transition-transform duration-300 items-start">
