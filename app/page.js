@@ -1,16 +1,13 @@
-'use client';
-
 import Image from 'next/image';
 import Picture1 from '../images/picture1.png';
 import Picture2 from '../images/picture2.jpg';
 import Navbar from '../components/Navbar';
 
 import MainSentence from '@/components/MainSentence';
-import { useLetterSpacing } from '../components/hooks/LetterSpacingProvider';
+
 export default function Home() {
-  const { isLetterSpacing, setIsLetterSpacing } = useLetterSpacing();
   return (
-    <main className={`${isLetterSpacing && 'tracking-wider'}`}>
+    <main>
       <div className="relative aspect-video w-full">
         <div className="flex flex-col absolute w-full top-0 left-0 z-20">
           <Navbar />

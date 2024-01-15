@@ -4,17 +4,20 @@ import Link from 'next/link';
 import Menu from './Menu';
 import Logo from '../images/Logo.png';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Accessibility from './Accessibility';
 import useSpeak from './Speak';
-import { useLetterSpacing } from './hooks/LetterSpacingProvider';
 
 const Navbar = () => {
   const [isHighContrast, setIsHighContrast] = useState(false);
-  const { isLetterSpacing, setIsLetterSpacing } = useLetterSpacing();
+  const [isLetterSpacing, setIsLetterSpacing] = useState(false);
 
   const toggleContrast = () => {
     setIsHighContrast(!isHighContrast);
+  };
+
+  const toggleLetterSpacing = () => {
+    setIsLetterSpacing(!isLetterSpacing);
   };
 
   const speak = useSpeak();
@@ -57,10 +60,17 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex justify-end md:mt-5 fixed right-3.5 top-[350px]">
-        <Accessibility toggleContrast={toggleContrast} />
+        <Accessibility
+          toggleContrast={toggleContrast}
+          toggleLetterSpacing={toggleLetterSpacing}
+        />
       </div>
       <div className="md:hidden flex items-center mr-2 z-20 mt-10">
-        <Menu speak={speak} isHighContrast={isHighContrast} />
+        <Menu
+          speak={speak}
+          isHighContrast={isHighContrast}
+          isLetterSpacing={isLetterSpacing}
+        />
       </div>
     </nav>
   );

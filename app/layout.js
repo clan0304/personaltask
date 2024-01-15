@@ -2,8 +2,6 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Lato } from 'next/font/google';
 import Footer from '../components/Footer';
-import { ToastContainer } from 'react-toastify';
-import { LetterSpacingProvider } from '@/components/hooks/LetterSpacingProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 const lato = Lato({
@@ -21,11 +19,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${lato.variable}`}>
-        <LetterSpacingProvider>
-          {children}
-          <ToastContainer position="top-right" autoClose={5000} />
-          <Footer />
-        </LetterSpacingProvider>
+        {children}
+
+        <Footer />
       </body>
     </html>
   );

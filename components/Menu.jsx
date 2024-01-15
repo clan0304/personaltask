@@ -5,11 +5,10 @@ import { IoMdClose } from 'react-icons/io';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import useSpeak from './Speak';
-import { useLetterSpacing } from './hooks/LetterSpacingProvider';
 
-const Menu = ({ isHighContrast }) => {
+const Menu = ({ isHighContrast, isLetterSpacing }) => {
   const [isMobileToggle, setIsMobileToggle] = useState(false);
-  const { isLetterSpacing } = useLetterSpacing();
+
   const speak = useSpeak();
 
   useEffect(() => {
