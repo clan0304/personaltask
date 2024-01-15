@@ -23,6 +23,9 @@ module.exports = {
       yellow: '#EBE772',
       blue: '#1B1947',
       black: '#000000',
+      darkGreen: '#485921',
+      textBlack: '#292929',
+      darkGrey: '#A8A8A8',
     },
     screens: {
       xs: '400px',

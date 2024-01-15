@@ -22,7 +22,7 @@ const Menu = ({ speak }) => {
 
   return (
     <div>
-      <div className="flex absolute top-10 right-2 justify-end z-40">
+      <div className="flex absolute top-2 right-2 justify-end z-40">
         <button
           className="hover:scale-125 transition-transform duration-500"
           onClick={() => setIsMobileToggle(!isMobileToggle)}

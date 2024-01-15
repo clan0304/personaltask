@@ -2,12 +2,13 @@ import Image from 'next/image';
 import Picture1 from '../images/picture1.png';
 import Picture2 from '../images/picture2.jpg';
 import Navbar from '../components/Navbar';
+import Accessibility from '@/components/Accessibility';
 
 export default function Home() {
   return (
     <main>
       <div className="relative aspect-video w-full">
-        <div className="absolute w-full top-0 left-0 z-20">
+        <div className="flex flex-col absolute w-full top-0 left-0 z-20">
           <Navbar />
         </div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center">
