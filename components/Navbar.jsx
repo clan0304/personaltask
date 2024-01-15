@@ -7,17 +7,14 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import Accessibility from './Accessibility';
 import useSpeak from './Speak';
+import { useLetterSpacing } from './hooks/useLetterSpacing';
 
 const Navbar = () => {
   const [isHighContrast, setIsHighContrast] = useState(false);
-  const [isLetterSpacing, setIsLetterSpacing] = useState(false);
+  const { isLetterSpacing } = useLetterSpacing();
 
   const toggleContrast = () => {
     setIsHighContrast(!isHighContrast);
-  };
-
-  const toggleLetterSpacing = () => {
-    setIsLetterSpacing(!isLetterSpacing);
   };
 
   const speak = useSpeak();
@@ -63,8 +60,6 @@ const Navbar = () => {
         <Accessibility
           toggleContrast={toggleContrast}
           isHighContrast={isHighContrast}
-          toggleLetterSpacing={toggleLetterSpacing}
-          isLetterSpacing={isLetterSpacing}
         />
       </div>
       <div className="md:hidden flex items-center mr-2 z-20 mt-10">

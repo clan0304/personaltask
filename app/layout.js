@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Lato } from 'next/font/google';
 import Footer from '../components/Footer';
+import { LetterSpacingProvider } from '@/components/hooks/useLetterSpacing';
 
 const inter = Inter({ subsets: ['latin'] });
 const lato = Lato({
@@ -19,9 +20,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${lato.variable}`}>
-        {children}
+        <LetterSpacingProvider>
+          {children}
 
-        <Footer />
+          <Footer />
+        </LetterSpacingProvider>
       </body>
     </html>
   );

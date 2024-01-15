@@ -4,6 +4,7 @@ import Picture2 from '../images/picture2.jpg';
 import Navbar from '../components/Navbar';
 
 import MainSentence from '@/components/MainSentence';
+import YellowContainer from '@/components/YellowContainer';
 
 export default function Home() {
   return (
@@ -24,16 +25,7 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-col sm:flex-row w-full sm:aspect-[4/3]">
-        <div className="bg-yellow text-black font-lato w-full justify-center sm:justify-start sm:w-1/2 flex items-center sm:pl-10 lg:pl-20 text-3xl xs:text-5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold aspect-[4/3]">
-          We lead the
-          <br />
-          way when it
-          <br /> comes to
-          <br />
-          range, quality
-          <br />
-          and expertise.
-        </div>
+        <YellowContainer />
         <div className="relative w-full sm:w-1/2 aspect-[4/3]">
           <Image src={Picture2} alt="picture1" fill objectFit="fill" />
         </div>
