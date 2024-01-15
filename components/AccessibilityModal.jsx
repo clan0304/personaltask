@@ -50,12 +50,11 @@ const AccessibilityModal = ({
         >
           {!isLetterSpacing ? (
             <div>
-              <p>Wider Letter Spacing</p>{' '}
-              <p className="text-2xl font-bold">On</p>
+              <p>Wider Spacing</p> <p className="text-2xl font-bold">On</p>
             </div>
           ) : (
             <div>
-              <p>Wider Letter Spacing</p>{' '}
+              <p>Wider Spacing</p>{' '}
               <p className="text-2xl font-bold text-red">Off</p>
             </div>
           )}

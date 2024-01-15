@@ -44,7 +44,7 @@ const Menu = ({ isHighContrast, isLetterSpacing }) => {
             animation: 'fadeIn 0.7s ease-in-out forwards',
           }}
         >
-          <div className="flex flex-col gap-10 items-center text-black text-3xl font-semibold mt-32 h-[100vh]">
+          <div className="flex flex-col gap-10 items-center text-black text-3xl xs:text-5xl font-semibold mt-32 h-[100vh]">
             {['about', 'service', 'team', 'news', 'contact'].map(
               (link, index) => (
                 <Link
@@ -61,8 +61,8 @@ const Menu = ({ isHighContrast, isLetterSpacing }) => {
             <Link
               className={
                 isHighContrast
-                  ? 'bg-green px-6 rounded-full hover:text-white duration-500'
-                  : 'bg-darkGreen px-6 rounded-full hover:text-white duration-500'
+                  ? 'bg-darkGreen px-6 rounded-full hover:text-black text-white duration-500'
+                  : 'bg-green px-6 rounded-full hover:text-black text-white duration-500'
               }
               href="/booksession"
               onFocus={() => speak('Book a Session')}
