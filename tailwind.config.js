@@ -7,6 +7,10 @@ module.exports = {
   ],
 
   theme: {
+    letterSpacing: {
+      normal: 0,
+      wider: '0.15em',
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -30,7 +34,7 @@ module.exports = {
     screens: {
       xs: '400px',
       sm: '640px',
-      md: '768px',
+      md: '800px',
       lg: '1024px',
       xl: '1280px',
       '2xl': '1536px',

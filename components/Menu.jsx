@@ -4,9 +4,11 @@ import { IoMenu } from 'react-icons/io5';
 import { IoMdClose } from 'react-icons/io';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import useSpeak from './Speak';
 
-const Menu = ({ speak }) => {
+const Menu = ({ isHighContrast, isLetterSpacing }) => {
   const [isMobileToggle, setIsMobileToggle] = useState(false);
+  const speak = useSpeak();
 
   useEffect(() => {
     if (isMobileToggle) {
@@ -34,33 +36,37 @@ const Menu = ({ speak }) => {
 
       {isMobileToggle && (
         <div
-          className="fixed top-0 left-0 w-full h-full z-30 bg-yellow opacity-0 scale-75 transition-all duration-700 ease-in-out"
+          className={`fixed top-0 left-0 w-full h-full z-30 bg-yellow opacity-0 scale-75 transition-all duration-700 ease-in-out ${
+            isLetterSpacing && 'tracking-wider'
+          }`}
           style={{
             animation: 'fadeIn 0.7s ease-in-out forwards',
           }}
         >
           <div className="flex flex-col gap-10 items-center text-black text-3xl font-semibold mt-32 h-[100vh]">
-            <Link href="/about">
-              <button className="hover:text-white duration-500 ease-in">
-                About
-              </button>
-            </Link>
-            <Link href="/service">
-              <button className="hover:text-white duration-500">Service</button>
-            </Link>
-            <Link href="/team">
-              <button className="hover:text-white duration-500">Team</button>
-            </Link>
-            <Link href="/news">
-              <button className="hover:text-white duration-500">News</button>
-            </Link>
-            <Link href="/contact">
-              <button className="hover:text-white duration-500">Contact</button>
-            </Link>
-            <Link href="/booksession">
-              <button className="bg-green px-6 rounded-full hover:text-white duration-500">
-                Book a Session
-              </button>
+            {['about', 'service', 'team', 'news', 'contact'].map(
+              (link, index) => (
+                <Link
+                  className="hover:text-white"
+                  onFocus={() => speak(link)}
+                  key={index}
+                  href={`/${link}`}
+                >
+                  {link}
+                </Link>
+              )
+            )}
+
+            <Link
+              className={
+                isHighContrast
+                  ? 'bg-green px-6 rounded-full hover:text-white duration-500'
+                  : 'bg-darkGreen px-6 rounded-full hover:text-white duration-500'
+              }
+              href="/booksession"
+              onFocus={() => speak('Book a Session')}
+            >
+              Book a Session
             </Link>
           </div>
         </div>

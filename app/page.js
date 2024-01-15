@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Picture1 from '../images/picture1.png';
 import Picture2 from '../images/picture2.jpg';
 import Navbar from '../components/Navbar';
-import Accessibility from '@/components/Accessibility';
 
 export default function Home() {
   return (

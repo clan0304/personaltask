@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${lato.variable}`}>
         {children}
+
         <Footer />
       </body>
     </html>
