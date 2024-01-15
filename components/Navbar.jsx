@@ -62,7 +62,9 @@ const Navbar = () => {
       <div className="flex justify-end md:mt-5 fixed right-3.5 top-[350px]">
         <Accessibility
           toggleContrast={toggleContrast}
+          isHighContrast={isHighContrast}
           toggleLetterSpacing={toggleLetterSpacing}
+          isLetterSpacing={isLetterSpacing}
         />
       </div>
       <div className="md:hidden flex items-center mr-2 z-20 mt-10">

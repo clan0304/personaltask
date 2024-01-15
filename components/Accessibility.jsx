@@ -4,7 +4,12 @@ import React, { useState } from 'react';
 import AccessibilityModal from './AccessibilityModal';
 import { IoAccessibility } from 'react-icons/io5';
 
-const Accessibility = ({ toggleContrast, toggleLetterSpacing }) => {
+const Accessibility = ({
+  toggleContrast,
+  toggleLetterSpacing,
+  isHighContrast,
+  isLetterSpacing,
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const closeModal = () => {
@@ -28,6 +33,8 @@ const Accessibility = ({ toggleContrast, toggleLetterSpacing }) => {
           onClose={closeModal}
           toggleContrast={toggleContrast}
           toggleLetterSpacing={toggleLetterSpacing}
+          isHighContrast={isHighContrast}
+          isLetterSpacing={isLetterSpacing}
         />
       )}
     </div>

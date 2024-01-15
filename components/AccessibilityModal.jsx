@@ -7,6 +7,8 @@ const AccessibilityModal = ({
   onClose,
   toggleContrast,
   toggleLetterSpacing,
+  isHighContrast,
+  isLetterSpacing,
 }) => {
   return (
     <div className="fixed right-0 top-[200px] w-full sm:w-1/2 lg:w-2/5 h-[500px] bg-blue flex flex-col text-white rounded-xl">
@@ -31,13 +33,32 @@ const AccessibilityModal = ({
           onClick={toggleContrast}
           className="bg-white w-[200px] h-[100px] text-black font-semibold"
         >
-          High Contrast
+          {!isHighContrast ? (
+            <div>
+              <p>High Contrast</p> <p className="text-2xl font-bold">On</p>
+            </div>
+          ) : (
+            <div>
+              <p>High Contrast</p>{' '}
+              <p className="text-2xl font-bold text-red">Off</p>
+            </div>
+          )}
         </button>
         <button
           onClick={toggleLetterSpacing}
           className="bg-white w-[200px] h-[100px] text-black font-semibold"
         >
-          Letter Spacing
+          {!isLetterSpacing ? (
+            <div>
+              <p>Wider Letter Spacing</p>{' '}
+              <p className="text-2xl font-bold">On</p>
+            </div>
+          ) : (
+            <div>
+              <p>Wider Letter Spacing</p>{' '}
+              <p className="text-2xl font-bold text-red">Off</p>
+            </div>
+          )}
         </button>
       </div>
     </div>
