@@ -5,9 +5,9 @@ import Logo from '../images/Logo.png';
 
 const AccessibilityModal = ({ onClose, toggleContrast }) => {
   return (
-    <div className="fixed right-0 top-[200px] w-full sm:w-1/2 h-[500px] bg-blue flex flex-col text-white">
+    <div className="fixed right-0 top-[200px] w-full sm:w-1/2 lg:w-2/5 h-[500px] bg-blue flex flex-col text-white rounded-xl">
       <div className="flex justify-between m-3">
-        <Image src={Logo} alt="logo" width={120} height={30} />
+        <Image src={Logo} alt="logo" width={150} height={30} />
 
         <IoMdClose
           size={40}
@@ -15,7 +15,7 @@ const AccessibilityModal = ({ onClose, toggleContrast }) => {
           className="hover:cursor-pointer"
         />
       </div>
-      <div className="ml-3 mt-3">
+      <div className="mx-3 mt-3">
         <p className="text-xl font-semibold mb-3">Personalisation Options</p>
         <p>
           Welcome to our accessibility toolbar! Adjust the options below to
