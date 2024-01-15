@@ -2,8 +2,10 @@
 import Image from 'next/image';
 import { IoMdClose } from 'react-icons/io';
 import Logo from '../images/Logo.png';
+import { useLetterSpacing } from './hooks/LetterSpacingProvider';
 
-const AccessibilityModal = ({ onClose, toggleContrast, toggleSpacing }) => {
+const AccessibilityModal = ({ onClose, toggleContrast }) => {
+  const { setIsLetterSpacing, isLetterSpacing } = useLetterSpacing();
   return (
     <div className="fixed right-0 top-[200px] w-full sm:w-1/2 lg:w-2/5 h-[500px] bg-blue flex flex-col text-white rounded-xl">
       <div className="flex justify-between m-3">
@@ -30,7 +32,7 @@ const AccessibilityModal = ({ onClose, toggleContrast, toggleSpacing }) => {
           High Contrast
         </button>
         <button
-          onClick={toggleSpacing}
+          onClick={() => setIsLetterSpacing(!isLetterSpacing)}
           className="bg-white w-[200px] h-[100px] text-black font-semibold"
         >
           Letter Spacing

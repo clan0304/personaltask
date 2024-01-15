@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import AccessibilityModal from './AccessibilityModal';
 import { IoAccessibility } from 'react-icons/io5';
 
-const Accessibility = ({ toggleContrast, toggleSpacing }) => {
+const Accessibility = ({ toggleContrast }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const closeModal = () => {
@@ -27,7 +27,6 @@ const Accessibility = ({ toggleContrast, toggleSpacing }) => {
         <AccessibilityModal
           onClose={closeModal}
           toggleContrast={toggleContrast}
-          toggleSpacing={toggleSpacing}
         />
       )}
     </div>

@@ -1,23 +1,21 @@
+'use client';
+
 import Image from 'next/image';
 import Picture1 from '../images/picture1.png';
 import Picture2 from '../images/picture2.jpg';
 import Navbar from '../components/Navbar';
 
+import MainSentence from '@/components/MainSentence';
+import { useLetterSpacing } from '../components/hooks/LetterSpacingProvider';
 export default function Home() {
+  const { isLetterSpacing, setIsLetterSpacing } = useLetterSpacing();
   return (
-    <main>
+    <main className={`${isLetterSpacing && 'tracking-wider'}`}>
       <div className="relative aspect-video w-full">
         <div className="flex flex-col absolute w-full top-0 left-0 z-20">
           <Navbar />
         </div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center">
-          <p className="text-white text-3xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-lato whitespace-nowrap my-3">
-            Lifecare Essendon
-          </p>
-          <p className="text-white text-[10px] xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-lato whitespace-nowrap">
-            Leaders in physiotherapy and sports medicine
-          </p>
-        </div>
+        <MainSentence />
         <div className="z-0">
           <Image
             className="brightness-90"
